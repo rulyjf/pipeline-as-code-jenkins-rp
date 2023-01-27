@@ -66,8 +66,20 @@ pipeline {
                 }
 
                 stage('Execute Shell') {
-                    steps {
-                        sh 'echo "Hello Student. Thanks for keeping up!"'
+                    parallel {
+                       stage('Execute Shell 1') {
+                         steps {
+                           sh 'echo "Hello Parallel 1. Thanks for keeping up!"'
+                         }
+                       stage('Execute Shell 2') {
+                         steps {
+                           sh 'echo "Hello Parallel 2. Thanks for keeping up!"'
+                         }
+                       stage('Execute Shell 3') {
+                         steps {
+                           sh 'echo "Hello Parallel 3. Thanks for keeping up!"'
+                         }    
+                       }
                     }
                 }
 
