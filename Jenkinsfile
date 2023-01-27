@@ -65,12 +65,10 @@ pipeline {
                     }
                 }
 
-                stage('Execute Shell') {
-                 stage('Execute Shell 1') {
+                stage('Execute Shell') {                 
                      steps {
                            sh 'echo "Hello No nested Parallel. Thanks for keeping up!"'
-                      }                     
-                    
+                      }  
                 }
 
                 stage('Print ENV variable') {
